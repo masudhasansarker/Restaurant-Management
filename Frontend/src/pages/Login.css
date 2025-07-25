@@ -1,0 +1,24 @@
+.regButton{
+    height:2rem;
+    width: 80px;
+    border-radius: 10px;
+    background-color: rgb(150, 227, 150);
+    margin-bottom: 50px;
+    margin-top: 5px;
+}
+.action{
+    color: red;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    text-decoration: underline;
+  }
+  .logout-btn:hover {
+    color: red;
+  }
+  

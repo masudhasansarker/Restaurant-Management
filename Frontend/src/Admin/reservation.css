@@ -1,0 +1,54 @@
+.BackgroundDesign{
+  background-image: url("pic2.jpg");
+  height: 800px;
+}
+
+.reservation-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .reservation-title {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color:white;
+  }
+  
+  .reservation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .reservation-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background: #f9f9f9;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  
+  .reservation-card h3 {
+    margin-top: 0;
+  }
+  
+  .reservation-card button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .reservation-card button:hover {
+    background: #c0392b;
+  }
+  
+  .no-reservations {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+  }
+  

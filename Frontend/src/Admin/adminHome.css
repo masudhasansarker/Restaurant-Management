@@ -1,0 +1,80 @@
+/* AdminDashboard.css */
+.admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 20px 0;
+  }
+  
+  .sidebar ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #34495e;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .maina {
+    margin-top:50px;
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    background-image: url("pic2.jpg");
+  }
+  
+  .maina h1 {
+    margin-bottom: 30px;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    color: #555;
+  }
+  

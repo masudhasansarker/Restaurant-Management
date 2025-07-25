@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: rgb(56, 54, 54);
+  height: 4rem;
+  padding: 0 30px;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Sections */
+.nav-left, .nav-center, .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Make center expand to push others outward */
+.nav-center {
+  flex: 1;
+  justify-content: center;
+}
+
+/* Logo styling */
+.logo {
+  height: 60px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+/* Nav Links */
+.link-design {
+  margin: 0 1rem;
+  padding: 30px;
+  color: aqua;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.link-design:hover {
+  color: cadetblue;
+}
+
+nav .active {
+  color: red;
+}
+
+/* Logout Button */
+.logout-btn {
+  text-decoration: none;
+  color: red;
+}
+
+.logout-btn:hover {
+  text-decoration: none;
+  background-color: rgb(70, 201, 107);
+  text-decoration: none;
+}

@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .home-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0f0f0f;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.6));
+  }
+  
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .text-section {
+    flex: 1 1 500px;
+    padding: 1rem;
+    animation: fadeInUp 1.5s ease;
+  }
+  
+  .welcome-msg {
+    color: #f1c40f;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .hero-heading {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .highlight {
+    color: #f7b731;
+    font-style: italic;
+  }
+  
+  .hero-subtext {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+  
+  .hero-buttons .btn {
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .btn.reservation {
+    background-color: #f7b731;
+    color: #1a1a1a;
+  }
+  
+  .btn.reservation:hover {
+    background-color: #e09e23;
+  }
+  
+  .btn.open-menu {
+    background-color: transparent;
+    color: #f7b731;
+    border: 2px solid #f7b731;
+  }
+  
+  .btn.open-menu:hover {
+    background-color: #f7b731;
+    color: #1a1a1a;
+  }
+  
+  .image-section {
+    flex: 1 1 500px;
+    height: 400px;
+    padding: 1rem;
+    animation: fadeInUp 1.5s ease;
+    background-image: url("home.jpg"); /* assuming it's in public folder */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: background 0.5s ease-in-out;
+  }
+  
+  
+  .hero-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero-heading {
+      font-size: 2.5rem;
+    }
+  
+    .hero-buttons {
+      justify-content: center;
+    }
+  }
+  .menu-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .menu-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .menu-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-card p {
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-card img {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

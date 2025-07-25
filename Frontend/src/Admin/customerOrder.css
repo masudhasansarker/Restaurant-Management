@@ -1,0 +1,39 @@
+.admin-orders {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.header{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.orders-table {
+  margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  background: #f7f3f3;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.orders-table th, .orders-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.orders-table th {
+  background-color: #8ce05b;
+}
+
+.orders-table td ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+.daily-total {
+  text-align: right;
+  margin: 1rem 2rem;
+  font-size: 1.1rem;
+  color: #444;
+}
