@@ -18,7 +18,7 @@ const DishManuItem = () => {
 
   // Fetch data from API
   useEffect(() => {
-    axios.get('http://localhost:3001/dish')
+    axios.get('https://restaurant-management-ui5z.onrender.com/dish')
       .then((response) => {
         setDish(response.data);
         const initialQuantities = {};
