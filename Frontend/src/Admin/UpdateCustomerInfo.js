@@ -27,7 +27,7 @@ console.log(id,name);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:3001/customer/${id}`, formData);
+      const response = await axios.put(`https://restaurant-management-ui5z.onrender.com/customer/${id}`, formData);
       alert(response.data);
       navigate('/admin/customer'); // navigate back after update
     } catch (err) {
