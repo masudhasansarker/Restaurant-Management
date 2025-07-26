@@ -17,7 +17,7 @@ const DrinkManuItem = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3001/drink')
+    axios.get('https://restaurant-management-ui5z.onrender.com/drink')
       .then((response) => {
         setDrink(response.data);
         const initialQuantities = {};
