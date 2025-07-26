@@ -8,7 +8,7 @@ const ViewOrder = () => {
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/createOrder")
+    axios.get("https://restaurant-management-ui5z.onrender.com/createOrder")
       .then(response => {
         setData(response.data);
         setFilteredData(response.data);
