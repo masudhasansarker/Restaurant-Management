@@ -13,7 +13,7 @@ const Payment = () => {
 
   const handleConfirm = async () => {
     try {
-      await axios.post('http://localhost:3001/order', {
+      await axios.post('https://restaurant-management-ui5z.onrender.com/order', {
         items: cartItems,
         total,
         paymentMethod,
