@@ -24,7 +24,7 @@ const Contact = () => {
     },
     onSubmit: async (values, { resetForm }) => {
       try {
-        await axios.post('http://localhost:3001/reservation', values);
+        await axios.post('https://restaurant-management-ui5z.onrender.com/reservation', values);
         setSubmitStatus('Reservation submitted successfully!');
         resetForm();
       } catch (err) {
@@ -42,7 +42,7 @@ const Contact = () => {
     },
     onSubmit: async (values, { resetForm }) => {
       try {
-        await axios.post('http://localhost:3001/feedback', values);
+        await axios.post('https://restaurant-management-ui5z.onrender.com/feedback', values);
         setFeedbackStatus('Thank you for your feedback!');
         resetForm();
       } catch (err) {
@@ -53,7 +53,7 @@ const Contact = () => {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:3001/customer")
+    axios.get("https://restaurant-management-ui5z.onrender.com/customer")
       .then(response => {
         setUserData(response.data);
       })
