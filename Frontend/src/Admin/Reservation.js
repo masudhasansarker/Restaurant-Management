@@ -7,7 +7,7 @@ const Reservation = () => {
 
   // Fetch reservations on component mount
   useEffect(() => {
-    axios.get('http://localhost:3001/reservation')
+    axios.get('https://restaurant-management-ui5z.onrender.com/reservation')
       .then((response) => {
         setReservations(response.data);
       })
@@ -19,7 +19,7 @@ const Reservation = () => {
   // Handle delete reservation
   const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete this reservation?')) {
-      axios.delete(`http://localhost:3001/reservation/${id}`)
+      axios.delete(`https://restaurant-management-ui5z.onrender.com/reservation/${id}`)
         .then((response) => {
           alert(response.data);
           // Remove deleted reservation from state
