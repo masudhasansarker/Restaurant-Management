@@ -7,7 +7,7 @@ const ManageCustomer = () => {
   const [customer, setCustomer] = useState([]);
   const navigate=useNavigate();
   useEffect(() => {
-    axios.get("http://localhost:3001/customer")
+    axios.get("https://restaurant-management-ui5z.onrender.com/customer")
       .then(response => {
         setCustomer(response.data);
       })
@@ -18,7 +18,7 @@ const ManageCustomer = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:3001/customer/${id}`);
+      const response = await axios.delete(`https://restaurant-management-ui5z.onrender.com/customer/${id}`);
       alert(response.data);
       // Remove deleted customer from the state
       setCustomer(customer.filter(c => c._id !== id));
