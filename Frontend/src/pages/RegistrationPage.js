@@ -17,7 +17,7 @@ const Login = () => {
         password:''
       },
       onSubmit:((item,{resetForm})=>{
-        axios.post("http://localhost:3001/register",item)
+        axios.post("https://restaurant-management-ui5z.onrender.com/register",item)
         .then(res=>{
           console.log(res.data);
           setFormData(item);
