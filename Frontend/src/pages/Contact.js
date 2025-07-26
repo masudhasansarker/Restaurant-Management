@@ -86,7 +86,7 @@ const Contact = () => {
       <PageTitle title="Contact Us / Make a Reservation" />
 
       <div className="contact-content">
-        <h2 className='content-title'>Get In Touch With Us</h2>
+        <h2 className='content-title'>Get In Touch With Uss</h2>
         <p>Have a question, suggestion, or want to make a reservation? We'd love to hear from you!</p>
 
         <div className="contact-grid">
