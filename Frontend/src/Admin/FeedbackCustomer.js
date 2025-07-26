@@ -6,7 +6,7 @@ const FeedbackCustomer = () => {
   const [feedback, setFeedback] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/feedback")
+    axios.get("https://restaurant-management-ui5z.onrender.com/feedback")
       .then(response => {
         setFeedback(response.data);
         console.log(response.data);
@@ -17,7 +17,7 @@ const FeedbackCustomer = () => {
   }, []);
 
   const handleDelete=async(id)=>{
-   await axios.delete(`http://localhost:3001/feedback/${id}`)
+   await axios.delete(`https://restaurant-management-ui5z.onrender.com/feedback/${id}`)
    .then(res=>{
     alert(res.data);
     setFeedback(prevFeedback => prevFeedback.filter(item => item._id !== id));
