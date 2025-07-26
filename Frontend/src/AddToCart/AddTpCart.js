@@ -11,7 +11,7 @@ const Cart = () => {
   const [user, setUser] = useState(null);
 
 useEffect(() => {
-  axios.get(`http://localhost:3001/getUser/${userName}`)
+  axios.get(`https://restaurant-management-ui5z.onrender.com/getUser/${userName}`)
     .then(res => {
       setUser(res.data);
     })
@@ -39,7 +39,7 @@ useEffect(() => {
       paymentMethod: paymentMethod
     };
 
-    axios.post("http://localhost:3001/createOrder", orderData)
+    axios.post("https://restaurant-management-ui5z.onrender.com/createOrder", orderData)
       .then(res => {
         console.log(res.data);
         alert("✅ Order submitted successfully!");
