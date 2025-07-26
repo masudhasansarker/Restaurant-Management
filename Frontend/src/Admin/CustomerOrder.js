@@ -9,7 +9,7 @@ const CustomerOrder = () => {
   const [dailyTotal, setDailyTotal] = useState(0);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/order')
+    axios.get('https://restaurant-management-ui5z.onrender.com/order')
       .then(res => {
         setOrders(res.data);
         setFilteredOrders(res.data);
