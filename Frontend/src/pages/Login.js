@@ -19,7 +19,7 @@ const Login = () => {
       password: ''
     },
     onSubmit: (item, { resetForm }) => {
-      axios.post("http://localhost:3001/login", item)
+      axios.post("https://restaurant-management-ui5z.onrender.com/login", item)
         .then(res => {
           if (res.data === "success") {
             login(formik.values.username);
