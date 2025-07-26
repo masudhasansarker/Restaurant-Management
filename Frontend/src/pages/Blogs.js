@@ -19,7 +19,7 @@ const Blogs = () => {
   const [quantities, setQuantities] = useState({});
 
   useEffect(() => {
-    axios.get("http://localhost:3001/desserts")
+    axios.get("https://restaurant-management-ui5z.onrender.com/desserts")
       .then((response) => {
         setDessert(response.data);
         const initialQuantities = {};
