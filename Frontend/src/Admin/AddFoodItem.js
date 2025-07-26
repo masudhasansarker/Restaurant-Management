@@ -21,7 +21,7 @@ export default function AddFoodItem() {
       formData.append("image", values.image);
 
       try {
-        const response = await axios.post("http://localhost:3001/addProduct", formData, {
+        const response = await axios.post("https://restaurant-management-ui5z.onrender.com/addProduct", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         alert("Product uploaded successfully!");
