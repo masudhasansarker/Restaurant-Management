@@ -30,7 +30,7 @@ import AdminLayout from '../Admin/AdminLayout/AdminLayout'
 const Index = () => {
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename='/'>
       {/* <Navbar /> */}
         <Routes>
             <Route element={<UserLayout />}>

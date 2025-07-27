@@ -6,15 +6,22 @@ const mongoose = require('mongoose');
 const UserRegLogin = require("./model/usersRegLog");
 //new
 const path = require("path");
+//multer path
 const multer = require("multer");
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
+
+//clodinary path
+const cloudinary = require("./cloudinary"); // import your config
+const streamifier = require("streamifier");
 
 //ssl commerce
-const SSLCommerzPayment = require('sslcommerz-lts');
-require('dotenv').config();
+// const SSLCommerzPayment = require('sslcommerz-lts');
+// require('dotenv').config();
 
-const store_id = process.env.STORE_ID;
-const store_passwd = process.env.STORE_PASSWORD;
-const is_live = process.env.IS_LIVE === 'true';
+// const store_id = process.env.STORE_ID;
+// const store_passwd = process.env.STORE_PASSWORD;
+// const is_live = process.env.IS_LIVE === 'true';
 //end ssl commerce
 
 const { Dish, Dessert, Drink } = require("./model/addFood");
@@ -237,25 +244,45 @@ app.get('/order', async (req, res) => {
 
 //add food item from fronted by admin to send the data in the mongodb server(product)
 
-app.use("/uploads", express.static("uploads"));
+// app.use("/uploads", express.static("uploads"));
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/");
-  },
-  filename: function (req, file, cb) {
-    const ext = path.extname(file.originalname);
-    cb(null, `${Date.now()}-${ext}`);
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "uploads/");
+//   },
+//   filename: function (req, file, cb) {
+//     const ext = path.extname(file.originalname);
+//     cb(null, `${Date.now()}-${ext}`);
+//   },
+// });
 
-const upload = multer({ storage: storage });
+// const upload = multer({ storage: storage });
 
 app.post("/addProduct", upload.single("image"), async (req, res) => {
   try {
     const { name, price, description, category } = req.body;
-    const imageUrl = req.file ? `http://localhost:3001/uploads/${req.file.filename}` : "";
+    let imageUrl = "";
 
+    // Upload to Cloudinary from memory buffer
+    if (req.file) {
+      const streamUpload = (req) => {
+        return new Promise((resolve, reject) => {
+          const stream = cloudinary.uploader.upload_stream(
+            { folder: "products" },
+            (error, result) => {
+              if (result) resolve(result);
+              else reject(error);
+            }
+          );
+          streamifier.createReadStream(req.file.buffer).pipe(stream);
+        });
+      };
+
+      const result = await streamUpload(req);
+      imageUrl = result.secure_url;
+    }
+
+    // Model selection
     let Model;
     switch (category) {
       case "dish":
@@ -280,7 +307,6 @@ app.post("/addProduct", upload.single("image"), async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
-
 
 //get the dissert food item from database to frontend(product)
 
